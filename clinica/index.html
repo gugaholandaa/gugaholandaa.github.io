@@ -1,0 +1,433 @@
+<title>Clínica Odontológica</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Karla:wght@400;500;600;700&display=swap">
+
+<style>
+  :root {
+    --bg: #FAFAF7;
+    --bg-2: #F1F0EA;
+    --surface: #FFFFFF;
+    --line: #E3E1D9;
+    --ink: #17302D;
+    --muted: #5C6B68;
+    --primary: #14615A;
+    --primary-soft: #E4EFEC;
+    --accent: #C07A4B;
+    --shadow: 0 1px 2px rgba(23,48,45,.04), 0 12px 32px -22px rgba(23,48,45,.45);
+    --demo: #8A5A2B;
+    --demo-bg: #FBF3E9;
+
+    --s--1: clamp(.8rem, .78rem + .1vw, .86rem);
+    --s-0: clamp(1rem, .97rem + .18vw, 1.08rem);
+    --s-1: clamp(1.15rem, 1.08rem + .34vw, 1.4rem);
+    --s-2: clamp(1.5rem, 1.32rem + .82vw, 2.1rem);
+    --s-3: clamp(2.1rem, 1.6rem + 2.3vw, 3.7rem);
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #101A19; --bg-2: #162422; --surface: #172826; --line: #263937;
+      --ink: #EAF2F0; --muted: #9FB2AF; --primary: #6FC5B8; --primary-soft: #1B3330;
+      --accent: #E0A472; --shadow: 0 1px 0 rgba(255,255,255,.03), 0 18px 40px -28px #000;
+      --demo: #E0B483; --demo-bg: #241C12;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #101A19; --bg-2: #162422; --surface: #172826; --line: #263937;
+    --ink: #EAF2F0; --muted: #9FB2AF; --primary: #6FC5B8; --primary-soft: #1B3330;
+    --accent: #E0A472; --shadow: 0 1px 0 rgba(255,255,255,.03), 0 18px 40px -28px #000;
+    --demo: #E0B483; --demo-bg: #241C12;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font-family: Karla, ui-sans-serif, system-ui, sans-serif;
+    font-size: var(--s-0); line-height: 1.65; -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 {
+    font-family: Newsreader, Georgia, serif; font-weight: 500;
+    line-height: 1.12; margin: 0; letter-spacing: -.015em; text-wrap: balance;
+  }
+  p { margin: 0; }
+  a { color: inherit; }
+  .wrap { width: min(100% - 2.5rem, 68rem); margin-inline: auto; }
+  .rotulo {
+    font-size: .74rem; letter-spacing: .16em; text-transform: uppercase;
+    font-weight: 600; color: var(--primary);
+  }
+
+  /* marcador de conteúdo a preencher */
+  .ex { color: var(--demo); border-bottom: 1px dashed currentColor; }
+
+  /* faixa de protótipo */
+  .faixa {
+    background: var(--demo-bg); border-bottom: 1px solid var(--line);
+    color: var(--demo); font-size: var(--s--1); text-align: center;
+    padding: .55rem 1rem;
+  }
+  .faixa b { font-weight: 700; }
+
+  /* navegação */
+  .nav { position: sticky; top: 0; z-index: 30; background: color-mix(in srgb, var(--bg) 88%, transparent);
+         backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+  .nav-in { display: flex; align-items: center; gap: 1.5rem; min-height: 4.2rem; flex-wrap: wrap; }
+  .marca { display: flex; align-items: center; gap: .6rem; margin-right: auto; text-decoration: none; }
+  .marca .sinal { width: 2.1rem; height: 2.1rem; border-radius: 50%; background: var(--primary);
+                  display: grid; place-items: center; color: var(--bg); font-family: Newsreader, serif;
+                  font-size: 1.1rem; font-weight: 600; }
+  .marca .nome { font-family: Newsreader, serif; font-size: 1.15rem; font-weight: 600; letter-spacing: -.01em; }
+  .nav-links { display: flex; gap: 1.4rem; font-size: var(--s--1); font-weight: 500; }
+  .nav-links a { text-decoration: none; color: var(--muted); padding: .3rem 0;
+                 border-bottom: 1.5px solid transparent; transition: color .18s, border-color .18s; }
+  .nav-links a:hover { color: var(--ink); border-bottom-color: var(--primary); }
+  @media (max-width: 740px) { .nav-links { display: none; } }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: .5rem; text-decoration: none;
+    font-family: Karla, sans-serif; font-size: var(--s--1); font-weight: 600;
+    padding: .7rem 1.2rem; border-radius: 999px; border: 1.5px solid var(--primary);
+    background: var(--primary); color: var(--bg); cursor: pointer;
+    transition: transform .16s ease, box-shadow .16s ease;
+  }
+  .btn:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
+  .btn-vazado { background: transparent; color: var(--primary); }
+  .btn-grande { font-size: var(--s-0); padding: .95rem 1.7rem; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+
+  section { padding-block: clamp(3.5rem, 7vw, 6rem); }
+
+  /* hero */
+  .hero { padding-block: clamp(3rem, 6vw, 5.5rem) clamp(3rem, 6vw, 5rem); }
+  .hero-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+               gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+  @media (max-width: 860px) { .hero-grid { grid-template-columns: 1fr; } }
+  .hero h1 { font-size: var(--s-3); margin-block: 1rem 1.25rem; }
+  .hero .lead { font-size: var(--s-1); color: var(--muted); max-width: 34ch; margin-bottom: 2rem; }
+  .hero-acoes { display: flex; gap: .8rem; flex-wrap: wrap; align-items: center; }
+  .hero-nota { font-size: var(--s--1); color: var(--muted); margin-top: 1.5rem; }
+
+  /* imagem de exemplo */
+  .foto {
+    border-radius: 1rem; border: 1px solid var(--line); background: var(--bg-2);
+    display: grid; place-items: center; text-align: center; padding: 1.5rem;
+    color: var(--muted); font-size: var(--s--1); position: relative; overflow: hidden;
+  }
+  .foto::before {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(135deg, var(--primary-soft) 0%, transparent 60%);
+    opacity: .75;
+  }
+  .foto span { position: relative; }
+  .foto-alta { aspect-ratio: 4 / 5; }
+  .foto-larga { aspect-ratio: 16 / 10; }
+  .foto-quadrada { aspect-ratio: 1 / 1; }
+
+  /* números */
+  .numeros { display: grid; grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+             gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 1rem; overflow: hidden; }
+  .numeros > div { background: var(--surface); padding: 1.5rem 1.4rem; }
+  .numeros .n { font-family: Newsreader, serif; font-size: var(--s-2); font-weight: 600; color: var(--primary); display: block; }
+  .numeros .d { font-size: var(--s--1); color: var(--muted); }
+
+  .sec-topo { max-width: 44ch; margin-bottom: 2.5rem; }
+  .sec-topo h2 { font-size: var(--s-2); margin-block: .7rem .8rem; }
+  .sec-topo p { color: var(--muted); }
+
+  .duas { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr);
+          gap: clamp(2rem, 5vw, 3.5rem); align-items: center; }
+  @media (max-width: 860px) { .duas { grid-template-columns: 1fr; } }
+  .prosa { display: grid; gap: 1rem; color: var(--muted); max-width: 58ch; }
+  .prosa strong { color: var(--ink); font-weight: 600; }
+
+  /* tratamentos */
+  .grade { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 1rem; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 1rem;
+          padding: 1.5rem 1.5rem 1.6rem; box-shadow: var(--shadow); }
+  .card .icone { width: 2.6rem; height: 2.6rem; border-radius: .7rem; background: var(--primary-soft);
+                 display: grid; place-items: center; margin-bottom: 1rem; color: var(--primary); }
+  .card h3 { font-size: var(--s-1); margin-bottom: .45rem; }
+  .card p { color: var(--muted); font-size: var(--s--1); }
+
+  /* resultados */
+  .casos { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1.25rem; }
+  .caso { background: var(--surface); border: 1px solid var(--line); border-radius: 1rem;
+          overflow: hidden; box-shadow: var(--shadow); }
+  .caso .par { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); }
+  .caso .par .foto { border: 0; border-radius: 0; aspect-ratio: 1/1; }
+  .caso .legenda { padding: 1rem 1.1rem 1.2rem; }
+  .caso .legenda h3 { font-size: var(--s-0); margin-bottom: .3rem; }
+  .caso .legenda p { font-size: var(--s--1); color: var(--muted); }
+  .caso .credito { margin-top: .6rem; font-size: .72rem; color: var(--muted);
+                   padding-top: .6rem; border-top: 1px solid var(--line); }
+
+  .aviso-legal { background: var(--demo-bg); border: 1px solid color-mix(in srgb, var(--demo) 35%, transparent);
+                 border-radius: 1rem; padding: 1.3rem 1.5rem; margin-top: 1.5rem; }
+  .aviso-legal h3 { font-size: var(--s-1); color: var(--demo); margin-bottom: .5rem; }
+  .aviso-legal p { font-size: var(--s--1); color: var(--muted); }
+
+  /* endereço */
+  .endereco { background: var(--bg-2); }
+  .info-lista { display: grid; gap: 1.4rem; }
+  .info-lista .item .r { font-size: .74rem; letter-spacing: .14em; text-transform: uppercase;
+                         color: var(--primary); font-weight: 600; margin-bottom: .2rem; }
+  .info-lista .item p { color: var(--muted); font-size: var(--s-0); }
+
+  /* contato final */
+  .contato { text-align: center; }
+  .contato h2 { font-size: var(--s-3); margin-bottom: 1rem; }
+  .contato p { color: var(--muted); max-width: 46ch; margin-inline: auto; margin-bottom: 2rem; }
+
+  footer { border-top: 1px solid var(--line); padding-block: 2.5rem 3rem; }
+  .rodape { display: flex; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap;
+            font-size: var(--s--1); color: var(--muted); }
+  .rodape .cro { font-weight: 600; color: var(--ink); }
+
+  /* nota para o cliente */
+  .nota-cliente { border-top: 3px solid var(--demo); background: var(--demo-bg); }
+  .nota-cliente h2 { font-size: var(--s-2); color: var(--demo); margin-bottom: .8rem; }
+  .nota-cliente ul { margin: 0; padding-left: 1.2rem; display: grid; gap: .55rem;
+                     color: var(--muted); font-size: var(--s--1); max-width: 62ch; }
+  .nota-cliente ul strong { color: var(--ink); }
+
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="faixa">
+  <b>Protótipo para aprovação</b> — todo o conteúdo abaixo é exemplo. Nomes, textos, fotos e números serão substituídos pelos reais.
+</div>
+
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="marca" href="#topo">
+      <span class="sinal">C</span>
+      <span class="nome"><span class="ex">Clínica Exemplo</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="#clinica">A clínica</a>
+      <a href="#tratamentos">Tratamentos</a>
+      <a href="#resultados">Resultados</a>
+      <a href="#onde">Onde estamos</a>
+    </div>
+    <a class="btn" href="https://wa.me/55DDDNUMERO" target="_blank" rel="noopener">Agendar avaliação</a>
+  </div>
+</nav>
+
+<header class="hero wrap" id="topo">
+  <div class="hero-grid">
+    <div>
+      <span class="rotulo">Odontologia em <span class="ex">Cidade / Bairro</span></span>
+      <h1>Um sorriso cuidado por quem trata cada caso como único.</h1>
+      <p class="lead">
+        <span class="ex">Frase curta sobre o diferencial da clínica — atendimento humanizado,
+        tecnologia, tempo dedicado a cada paciente.</span>
+      </p>
+      <div class="hero-acoes">
+        <a class="btn btn-grande" href="https://wa.me/55DDDNUMERO" target="_blank" rel="noopener">Falar no WhatsApp</a>
+        <a class="btn btn-vazado btn-grande" href="#tratamentos">Ver tratamentos</a>
+      </div>
+      <p class="hero-nota">Atendimento com hora marcada · <span class="ex">Segunda a sexta, 9h às 19h</span></p>
+    </div>
+    <div class="foto foto-alta"><span>foto da recepção ou do consultório<br>— formato retrato</span></div>
+  </div>
+</header>
+
+<main>
+  <section class="wrap" id="clinica">
+    <div class="duas">
+      <div class="foto foto-larga"><span>foto da equipe ou do responsável técnico</span></div>
+      <div>
+        <span class="rotulo">A clínica</span>
+        <h2 style="font-size:var(--s-2); margin-block:.7rem 1.2rem">Quem cuida de você</h2>
+        <div class="prosa">
+          <p>
+            <span class="ex">Dois ou três parágrafos contando a história da clínica: quando começou,
+            o que motivou, qual é a forma de atender que diferencia vocês.</span>
+          </p>
+          <p>
+            <strong>Uma dica de texto:</strong> <span class="ex">fale do paciente, não da clínica.
+            Em vez de "temos equipamentos modernos", escreva "você faz o raio-x na mesma consulta,
+            sem precisar voltar outro dia".</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="numeros" style="margin-top:3rem">
+      <div><span class="n ex">00</span><span class="d">anos de atendimento</span></div>
+      <div><span class="n ex">0.000</span><span class="d">pacientes atendidos</span></div>
+      <div><span class="n ex">00</span><span class="d">especialidades</span></div>
+      <div><span class="n ex">0,0</span><span class="d">avaliação no Google</span></div>
+    </div>
+  </section>
+
+  <section class="wrap" id="tratamentos">
+    <div class="sec-topo">
+      <span class="rotulo">Tratamentos</span>
+      <h2>O que fazemos aqui</h2>
+      <p>Cada item vira um card. Podemos ter mais ou menos, conforme as especialidades da clínica.</p>
+    </div>
+    <div class="grade">
+      <div class="card">
+        <div class="icone" aria-hidden="true">✦</div>
+        <h3>Clínica geral</h3>
+        <p><span class="ex">Limpeza, restauração, prevenção e acompanhamento de rotina.</span></p>
+      </div>
+      <div class="card">
+        <div class="icone" aria-hidden="true">◈</div>
+        <h3>Estética dental</h3>
+        <p><span class="ex">Clareamento, facetas e harmonização do sorriso.</span></p>
+      </div>
+      <div class="card">
+        <div class="icone" aria-hidden="true">◎</div>
+        <h3>Implantes</h3>
+        <p><span class="ex">Reposição de dentes com planejamento digital.</span></p>
+      </div>
+      <div class="card">
+        <div class="icone" aria-hidden="true">⌁</div>
+        <h3>Ortodontia</h3>
+        <p><span class="ex">Aparelhos fixos e alinhadores transparentes.</span></p>
+      </div>
+      <div class="card">
+        <div class="icone" aria-hidden="true">✜</div>
+        <h3>Endodontia</h3>
+        <p><span class="ex">Tratamento de canal com foco em conforto.</span></p>
+      </div>
+      <div class="card">
+        <div class="icone" aria-hidden="true">◐</div>
+        <h3>Odontopediatria</h3>
+        <p><span class="ex">Atendimento infantil, do primeiro dentinho em diante.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap" id="resultados">
+    <div class="sec-topo">
+      <span class="rotulo">Resultados</span>
+      <h2>Casos realizados</h2>
+      <p>Cada caso mostra o antes e o depois, com o nome do profissional responsável e o CRO, como exige a norma.</p>
+    </div>
+
+    <div class="casos">
+      <article class="caso">
+        <div class="par">
+          <div class="foto"><span>antes</span></div>
+          <div class="foto"><span>depois</span></div>
+        </div>
+        <div class="legenda">
+          <h3><span class="ex">Clareamento e restauração</span></h3>
+          <p><span class="ex">Uma frase sobre a queixa do paciente e o que foi feito.</span></p>
+          <p class="credito">Procedimento realizado por <span class="ex">Dr. Nome Sobrenome</span> · <span class="ex">CRO-SP 00000</span> · imagens publicadas com autorização por escrito do paciente</p>
+        </div>
+      </article>
+
+      <article class="caso">
+        <div class="par">
+          <div class="foto"><span>antes</span></div>
+          <div class="foto"><span>depois</span></div>
+        </div>
+        <div class="legenda">
+          <h3><span class="ex">Implante unitário</span></h3>
+          <p><span class="ex">Uma frase sobre a queixa do paciente e o que foi feito.</span></p>
+          <p class="credito">Procedimento realizado por <span class="ex">Dr. Nome Sobrenome</span> · <span class="ex">CRO-SP 00000</span> · imagens publicadas com autorização por escrito do paciente</p>
+        </div>
+      </article>
+
+      <article class="caso">
+        <div class="par">
+          <div class="foto"><span>antes</span></div>
+          <div class="foto"><span>depois</span></div>
+        </div>
+        <div class="legenda">
+          <h3><span class="ex">Alinhamento ortodôntico</span></h3>
+          <p><span class="ex">Uma frase sobre a queixa do paciente e o que foi feito.</span></p>
+          <p class="credito">Procedimento realizado por <span class="ex">Dr. Nome Sobrenome</span> · <span class="ex">CRO-SP 00000</span> · imagens publicadas com autorização por escrito do paciente</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="aviso-legal">
+      <h3>Atenção às regras do CFO</h3>
+      <p>
+        A Resolução CFO-196/2019 permite divulgar imagens de antes e depois, mas com condições:
+        a publicação deve ser feita pelo profissional que realizou o procedimento, e não pela clínica
+        como pessoa jurídica; as imagens precisam trazer o nome do profissional e o número do CRO;
+        fotos de etapas intermediárias do tratamento não podem ser divulgadas; e é necessário o
+        consentimento formal, por escrito, do paciente. <strong>Vale confirmar o formato com o
+        responsável técnico ou com o CRO do estado antes de publicar esta seção.</strong> Se preferirmos
+        o caminho mais seguro, esta seção pode ser substituída por depoimentos em texto ou pelas
+        avaliações do Google.
+      </p>
+    </div>
+  </section>
+
+  <section class="endereco" id="onde">
+    <div class="wrap duas">
+      <div>
+        <span class="rotulo">Onde estamos</span>
+        <h2 style="font-size:var(--s-2); margin-block:.7rem 1.6rem">Fácil de chegar</h2>
+        <div class="info-lista">
+          <div class="item">
+            <p class="r">Endereço</p>
+            <p><span class="ex">Rua Exemplo, 000 — Sala 00<br>Bairro, Cidade — SP, 00000-000</span></p>
+          </div>
+          <div class="item">
+            <p class="r">Horário</p>
+            <p><span class="ex">Segunda a sexta, 9h às 19h<br>Sábado, 9h às 13h</span></p>
+          </div>
+          <div class="item">
+            <p class="r">Telefone</p>
+            <p><span class="ex">(00) 0000-0000</span></p>
+          </div>
+          <div class="item">
+            <p class="r">Estacionamento</p>
+            <p><span class="ex">Convênio com estacionamento ao lado.</span></p>
+          </div>
+        </div>
+      </div>
+      <div class="foto foto-larga"><span>mapa do Google incorporado<br>— clicável, abre a rota</span></div>
+    </div>
+  </section>
+
+  <section class="wrap contato">
+    <span class="rotulo">Contato</span>
+    <h2>Vamos marcar sua avaliação?</h2>
+    <p>
+      <span class="ex">Frase curta e acolhedora convidando ao primeiro contato. Diga o que acontece
+      depois do clique: "respondemos em até 1 hora no horário comercial".</span>
+    </p>
+    <a class="btn btn-grande" href="https://wa.me/55DDDNUMERO" target="_blank" rel="noopener">
+      Chamar no WhatsApp
+    </a>
+    <p style="margin-top:1.5rem; font-size:var(--s--1)">
+      Ou ligue para <span class="ex">(00) 0000-0000</span> · <span class="ex">contato@clinica.com.br</span>
+    </p>
+  </section>
+</main>
+
+<footer class="wrap">
+  <div class="rodape">
+    <span><span class="ex">Clínica Exemplo</span> — <span class="ex">Rua Exemplo, 000, Cidade/SP</span></span>
+    <span class="cro">Responsável técnico: <span class="ex">Dr. Nome Sobrenome — CRO-SP 00000</span></span>
+  </div>
+</footer>
+
+<section class="nota-cliente">
+  <div class="wrap">
+    <h2>O que precisamos de você para deixar o site pronto</h2>
+    <ul>
+      <li><strong>Nome e logotipo</strong> da clínica, em boa qualidade — se houver.</li>
+      <li><strong>Fotos:</strong> recepção, consultório e equipe. De preferência com luz natural e na horizontal.</li>
+      <li><strong>Texto sobre a clínica:</strong> pode mandar por áudio no WhatsApp que eu transformo em texto.</li>
+      <li><strong>Lista dos tratamentos</strong> que você quer destacar, na ordem de importância.</li>
+      <li><strong>Casos de antes e depois</strong> — com o nome do profissional, o CRO e a autorização escrita do paciente. Confirme antes com o CRO qual formato é aceito.</li>
+      <li><strong>Endereço completo, horário de funcionamento, telefone e WhatsApp.</strong></li>
+      <li><strong>Nome e CRO do responsável técnico</strong>, que precisa constar no rodapé.</li>
+      <li><strong>Redes sociais</strong> da clínica, se quiser que apareçam.</li>
+      <li>E, principalmente: <strong>o que você acha que está faltando aqui.</strong> Este é um rascunho para ouvir você.</li>
+    </ul>
+  </div>
+</section>
