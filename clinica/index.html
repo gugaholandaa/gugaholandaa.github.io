@@ -164,6 +164,25 @@
   .caso .credito { margin-top: .6rem; font-size: .72rem; color: var(--muted);
                    padding-top: .6rem; border-top: 1px solid var(--line); }
 
+  /* recado do Gustavo para o cliente */
+  .recado {
+    background: var(--demo-bg);
+    border: 1px solid color-mix(in srgb, var(--demo) 30%, transparent);
+    border-left: 3px solid var(--demo);
+    border-radius: .3rem .8rem .8rem .3rem;
+    padding: 1rem 1.2rem 1.1rem;
+    margin-block: 1.1rem;
+    max-width: 58ch;
+  }
+  .recado .de {
+    display: block; font-size: .68rem; letter-spacing: .14em; text-transform: uppercase;
+    font-weight: 700; color: var(--demo); margin-bottom: .45rem;
+  }
+  .recado p { color: var(--muted); font-size: var(--s--1); line-height: 1.7; }
+  .recado p + p { margin-top: .7rem; }
+  .recado strong { color: var(--ink); font-weight: 600; }
+  .recado.largo { max-width: none; }
+
   .aviso-legal { background: var(--demo-bg); border: 1px solid color-mix(in srgb, var(--demo) 35%, transparent);
                  border-radius: 1rem; padding: 1.3rem 1.5rem; margin-top: 1.5rem; }
   .aviso-legal h3 { font-size: var(--s-1); color: var(--demo); margin-bottom: .5rem; }
@@ -197,7 +216,7 @@
 </style>
 
 <div class="faixa">
-  <b>Protótipo para aprovação</b> — todo o conteúdo abaixo é exemplo. Nomes, textos, fotos e números serão substituídos pelos reais.
+  <b>Marião, isso aqui é um rascunho pra gente conversar.</b> Tudo que está escrito é exemplo meu — os recados em laranja são pra você. Vai lendo e me diz o que muda.
 </div>
 
 <nav class="nav">
@@ -222,35 +241,50 @@
       <span class="rotulo">Odontologia em <span class="ex">Cidade / Bairro</span></span>
       <h1>Um sorriso cuidado por quem trata cada caso como único.</h1>
       <p class="lead">
-        <span class="ex">Frase curta sobre o diferencial da clínica — atendimento humanizado,
-        tecnologia, tempo dedicado a cada paciente.</span>
+        <span class="ex">Aqui entra uma frase curta e forte sobre o seu jeito de atender.</span>
       </p>
+      <div class="recado">
+        <p>
+          Marião, esse é o primeiro segundo da pessoa no site — o que ela lê aqui decide se ela
+          desce ou fecha. Por isso deixei uma frase sobre <strong>como você atende</strong>, e não
+          sobre equipamento.
+        </p>
+        <p>
+          Me manda por áudio o que você diria pra um paciente que chega com medo de dentista.
+          É esse tom que eu quero colocar aqui.
+        </p>
+      </div>
       <div class="hero-acoes">
         <a class="btn btn-grande" href="https://wa.me/55DDDNUMERO" target="_blank" rel="noopener">Falar no WhatsApp</a>
         <a class="btn btn-vazado btn-grande" href="#tratamentos">Ver tratamentos</a>
       </div>
-      <p class="hero-nota">Atendimento com hora marcada · <span class="ex">Segunda a sexta, 9h às 19h</span></p>
+      <p class="hero-nota">Atendimento com hora marcada · <span class="ex">seu horário aqui</span></p>
     </div>
-    <div class="foto foto-alta"><span>foto da recepção ou do consultório<br>— formato retrato</span></div>
+    <div class="foto foto-alta"><span>foto sua ou da recepção<br>de pé, formato retrato<br><br>se puder, com luz natural</span></div>
   </div>
 </header>
 
 <main>
   <section class="wrap" id="clinica">
     <div class="duas">
-      <div class="foto foto-larga"><span>foto da equipe ou do responsável técnico</span></div>
+      <div class="foto foto-larga"><span>foto sua ou da equipe<br>na horizontal</span></div>
       <div>
         <span class="rotulo">A clínica</span>
         <h2 style="font-size:var(--s-2); margin-block:.7rem 1.2rem">Quem cuida de você</h2>
         <div class="prosa">
+          <p><span class="ex">Dois ou três parágrafos com a sua história aqui.</span></p>
+        </div>
+        <div class="recado">
           <p>
-            <span class="ex">Dois ou três parágrafos contando a história da clínica: quando começou,
-            o que motivou, qual é a forma de atender que diferencia vocês.</span>
+            Essa parte é a sua história, e é o que faz a pessoa confiar antes de conhecer você.
+            <strong>Me conta por áudio no WhatsApp mesmo</strong>, do jeito que você fala: quando
+            abriu, por que escolheu odontologia, e o que te deixa orgulhoso no atendimento.
+            Eu transformo em texto — não precisa ficar bonito na sua boca, isso é comigo.
           </p>
           <p>
-            <strong>Uma dica de texto:</strong> <span class="ex">fale do paciente, não da clínica.
-            Em vez de "temos equipamentos modernos", escreva "você faz o raio-x na mesma consulta,
-            sem precisar voltar outro dia".</span>
+            Uma coisa que aprendi lendo sobre isso: funciona melhor falar do paciente, não da
+            clínica. Em vez de "temos equipamentos modernos", fica melhor "você faz o raio-x na
+            mesma consulta, sem precisar voltar outro dia". Vale pensar nessa chave.
           </p>
         </div>
       </div>
@@ -262,13 +296,28 @@
       <div><span class="n ex">00</span><span class="d">especialidades</span></div>
       <div><span class="n ex">0,0</span><span class="d">avaliação no Google</span></div>
     </div>
+
+    <div class="recado largo">
+      <p>
+        Esses números dão credibilidade rápido pra quem não te conhece.
+        <strong>Não precisa ser quatro</strong> — se só dois fizerem sentido pra clínica, a gente
+        deixa dois e fica até melhor do que encher. Me diz quais você quer mostrar.
+      </p>
+    </div>
   </section>
 
   <section class="wrap" id="tratamentos">
     <div class="sec-topo">
       <span class="rotulo">Tratamentos</span>
       <h2>O que fazemos aqui</h2>
-      <p>Cada item vira um card. Podemos ter mais ou menos, conforme as especialidades da clínica.</p>
+    </div>
+    <div class="recado" style="margin-bottom:2rem">
+      <p>
+        Chutei os tratamentos mais comuns só pra você ver o formato. <strong>Risca o que você não
+        faz, acrescenta o que faltou e me diz a ordem</strong> — o primeiro card é o que mais chama
+        atenção, então ali deve ficar o que você mais quer atrair.
+      </p>
+      <p>As descrições também são minhas. Corrige à vontade, você é quem sabe.</p>
     </div>
     <div class="grade">
       <div class="card">
@@ -308,7 +357,24 @@
     <div class="sec-topo">
       <span class="rotulo">Resultados</span>
       <h2>Casos realizados</h2>
-      <p>Cada caso mostra o antes e o depois, com o nome do profissional responsável e o CRO, como exige a norma.</p>
+    </div>
+    <div class="recado largo" style="margin-bottom:2rem">
+      <p>
+        Marião, aqui entram os seus antes e depois. Mas pesquisando pra montar isso eu esbarrei
+        numa regra que talvez você já conheça: a <strong>Resolução CFO-196/2019</strong>.
+      </p>
+      <p>
+        Pelo que entendi dela, a publicação precisa ser feita <strong>por você, o profissional que
+        realizou o procedimento</strong> — não pela clínica como empresa. E a imagem tem que trazer
+        o <strong>seu nome e o seu CRO</strong>. Foto do "durante" não pode, e precisa da
+        autorização por escrito do paciente.
+      </p>
+      <p>
+        Por isso já montei a legenda de cada caso nesse formato, com o crédito e o CRO embaixo.
+        <strong>Confirma com o seu CRO se está certo assim</strong>, porque eu não sou da área e
+        não quero te colocar em roubada. Se preferir o caminho mais tranquilo, a gente troca essa
+        seção por depoimentos escritos ou pelas suas avaliações do Google — me diz o que você acha.
+      </p>
     </div>
 
     <div class="casos">
@@ -349,19 +415,7 @@
       </article>
     </div>
 
-    <div class="aviso-legal">
-      <h3>Atenção às regras do CFO</h3>
-      <p>
-        A Resolução CFO-196/2019 permite divulgar imagens de antes e depois, mas com condições:
-        a publicação deve ser feita pelo profissional que realizou o procedimento, e não pela clínica
-        como pessoa jurídica; as imagens precisam trazer o nome do profissional e o número do CRO;
-        fotos de etapas intermediárias do tratamento não podem ser divulgadas; e é necessário o
-        consentimento formal, por escrito, do paciente. <strong>Vale confirmar o formato com o
-        responsável técnico ou com o CRO do estado antes de publicar esta seção.</strong> Se preferirmos
-        o caminho mais seguro, esta seção pode ser substituída por depoimentos em texto ou pelas
-        avaliações do Google.
-      </p>
-    </div>
+
   </section>
 
   <section class="endereco" id="onde">
@@ -388,17 +442,34 @@
           </div>
         </div>
       </div>
-      <div class="foto foto-larga"><span>mapa do Google incorporado<br>— clicável, abre a rota</span></div>
+      <div>
+        <div class="foto foto-larga"><span>mapa do Google aqui</span></div>
+        <div class="recado">
+          <p>
+            Me manda o endereço completo que eu coloco o mapa do Google aqui, clicável — a pessoa
+            toca e já abre a rota no celular dela. Se tiver referência ("em frente ao mercado tal"),
+            manda também, ajuda mais do que parece.
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 
   <section class="wrap contato">
     <span class="rotulo">Contato</span>
     <h2>Vamos marcar sua avaliação?</h2>
-    <p>
-      <span class="ex">Frase curta e acolhedora convidando ao primeiro contato. Diga o que acontece
-      depois do clique: "respondemos em até 1 hora no horário comercial".</span>
-    </p>
+    <p><span class="ex">Frase curta e acolhedora convidando ao primeiro contato.</span></p>
+    <div class="recado" style="margin-inline:auto; text-align:left">
+      <p>
+        O botão abre o seu WhatsApp com a mensagem já escrita, tipo "Oi! Vim pelo site e queria
+        marcar uma avaliação". Assim <strong>você já sabe de onde veio o contato</strong> e a pessoa
+        não trava pensando no que escrever.
+      </p>
+      <p>
+        Vale dizer aqui em quanto tempo você costuma responder. Parece bobo, mas tira a ansiedade
+        de quem está mandando mensagem pra um dentista pela primeira vez.
+      </p>
+    </div>
     <a class="btn btn-grande" href="https://wa.me/55DDDNUMERO" target="_blank" rel="noopener">
       Chamar no WhatsApp
     </a>
@@ -417,7 +488,10 @@
 
 <section class="nota-cliente">
   <div class="wrap">
-    <h2>O que precisamos de você para deixar o site pronto</h2>
+    <h2>Marião, o que eu preciso de você</h2>
+    <p style="color:var(--muted); font-size:var(--s--1); max-width:62ch; margin-bottom:1.2rem">
+      Não precisa mandar tudo de uma vez. Manda o que tiver em mãos que eu já vou montando.
+    </p>
     <ul>
       <li><strong>Nome e logotipo</strong> da clínica, em boa qualidade — se houver.</li>
       <li><strong>Fotos:</strong> recepção, consultório e equipe. De preferência com luz natural e na horizontal.</li>
@@ -427,7 +501,7 @@
       <li><strong>Endereço completo, horário de funcionamento, telefone e WhatsApp.</strong></li>
       <li><strong>Nome e CRO do responsável técnico</strong>, que precisa constar no rodapé.</li>
       <li><strong>Redes sociais</strong> da clínica, se quiser que apareçam.</li>
-      <li>E, principalmente: <strong>o que você acha que está faltando aqui.</strong> Este é um rascunho para ouvir você.</li>
+      <li>E o mais importante: <strong>o que você acha que está faltando ou sobrando.</strong> Fiz esse rascunho justamente pra te ouvir em cima de algo concreto.</li>
     </ul>
   </div>
 </section>
